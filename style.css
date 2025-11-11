@@ -107,7 +107,7 @@ body {
 #upgrade-button2 {
   position: absolute;
   top: calc(50% - 230px);  /* positions it near the top-left corner of the white box */
-  left: calc(60% - 150px); /* adjust if needed to align nicely inside */
+  left: calc(60% - 100px); /* adjust if needed to align nicely inside */
   width: 180px;
   height: 80px;
   background-color: #003366;      /* dark blue base color */
