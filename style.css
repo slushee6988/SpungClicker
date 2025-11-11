@@ -1,0 +1,163 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #222;
+  padding-left: 300px;
+}
+
+/* Spungus container (holds image + counter) */
+#spungus-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Spungus image */
+#spungus-img {
+  width: 250px;
+  height: auto;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.05s ease;
+}
+
+#spungus-img:active {
+  transform: scale(0.95);
+}
+
+/* Counter attached to Spungus */
+#click-counter {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 28px;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 6px black;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Center rectangle */
+#center-box {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 500px;
+  border: 3px solid white;
+  border-radius: 20px;
+  background: transparent;
+}
+
+/* Upgrade label above the box */
+#upgrade-label {
+  position: absolute;
+  top: calc(50% - 300px); /* places it right above the box */
+  left: 60%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 36px;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 8px black;
+  letter-spacing: 2px;
+  user-select: none;
+}
+#upgrade-button {
+  position: absolute;
+  top: calc(50% - 230px);  /* positions it near the top-left corner of the white box */
+  left: calc(60% - 370px); /* adjust if needed to align nicely inside */
+  width: 180px;
+  height: 80px;
+  background-color: #003366;      /* dark blue base color */
+  border: 2px solid black;
+  border-radius: 12px;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* Darkened (locked) look */
+#upgrade-button.locked {
+  background-color: #001a33;      /* darker blue */
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Bright (unlocked) look */
+#upgrade-button.unlocked {
+  background-color: #3399ff;      /* bright blue */
+  box-shadow: 0 0 15px #3399ff;
+}
+#upgrade-button2 {
+  position: absolute;
+  top: calc(50% - 230px);  /* positions it near the top-left corner of the white box */
+  left: calc(60% - 150px); /* adjust if needed to align nicely inside */
+  width: 180px;
+  height: 80px;
+  background-color: #003366;      /* dark blue base color */
+  border: 2px solid black;
+  border-radius: 12px;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* Darkened (locked) look */
+#upgrade-button2.locked {
+  background-color: #001a33;      /* darker blue */
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Bright (unlocked) look */
+#upgrade-button2.unlocked {
+  background-color: #3399ff;      /* bright blue */
+  box-shadow: 0 0 15px #3399ff;
+}
+.sping {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url("spungus.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0.9;
+  transform: translate(-50%, -50%) scale(1);
+  animation: sping-fly 0.8s ease-out forwards;
+}
+
+/* Animation for mini Spungs */
+@keyframes sping-fly {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.4);
+    opacity: 0;
+  }
+}
